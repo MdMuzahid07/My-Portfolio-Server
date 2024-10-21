@@ -3,6 +3,7 @@ import { ProjectRouter } from "../modules/projects/project.routes";
 import { SkillRouter } from "../modules/skills/skills.routes";
 import { SocialRouter } from "../modules/social/social.routes";
 import { HobbyRouter } from "../modules/hobby/hobby.routes";
+import { ProfileRouter } from "../modules/profile/profile.routes";
 
 
 const router = express.Router();
@@ -23,6 +24,10 @@ const moduleRoutes = [
     {
         path: "/hobby",
         route: HobbyRouter
+    },
+    {
+        path: "/profile",
+        route: ProfileRouter
     },
 ];
 
