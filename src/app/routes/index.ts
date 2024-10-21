@@ -6,6 +6,7 @@ import { HobbyRouter } from "../modules/hobby/hobby.routes";
 import { ProfileRouter } from "../modules/profile/profile.routes";
 import { EducationRouter } from "../modules/education/education.routes";
 import { CourseRouter } from "../modules/courses/courses.routes";
+import { ExperienceRouter } from "../modules/experience/experience.routes";
 
 
 const router = express.Router();
@@ -38,6 +39,10 @@ const moduleRoutes = [
     {
         path: "/courses",
         route: CourseRouter
+    },
+    {
+        path: "/experience",
+        route: ExperienceRouter
     },
 ];
 
