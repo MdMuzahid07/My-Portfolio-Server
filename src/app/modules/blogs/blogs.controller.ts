@@ -5,8 +5,13 @@ import { BlogService } from "./blogs.service";
 
 const createBlog = async (req: Request, res: Response, next: NextFunction) => {
     try {
-        const payload = req.body;
+        const richText = await req.body.texts;
+        const title = await req.body.title;
         const file = req.file;
+        const payload = {
+            texts: richText,
+            title: title
+        };
 
         const result = await BlogService.createBlogIntoDB(file, payload);
 

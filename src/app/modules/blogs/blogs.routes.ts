@@ -1,4 +1,4 @@
-import express, { NextFunction, Request, Response } from "express";
+import express from "express";
 import requestValidator from "../../middlewares/requestValidator";
 import { BlogController } from "./blogs.controller";
 import { BlogValidation } from "./blogs.validation";
@@ -10,11 +10,7 @@ const router = express.Router();
 
 router.post(
     "/post-blog",
-    multerUpload.single("image"),
-    (req: Request, res: Response, next: NextFunction) => {
-        req.body = JSON.parse(req.body.data);
-        next();
-    },
+    multerUpload.single("thumbnail"),
     requestValidator(BlogValidation.BlogValidationSchema),
     BlogController.createBlog,
 );

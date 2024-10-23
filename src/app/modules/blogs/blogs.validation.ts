@@ -2,12 +2,14 @@ import { z } from "zod";
 
 
 const BlogValidationSchema = z.object({
-    thumbnail: z.string(),
+    title: z.string(),
+    thumbnail: z.string().optional(),
     texts: z.string()
 });
 
 
 const BlogUpdateValidationSchema = z.object({
+    title: z.string().optional(),
     thumbnail: z.string().optional(),
     texts: z.string().optional()
 });

@@ -5,7 +5,7 @@ import CustomAppError from "../../errors/CustomAppError";
 
 const createBlogIntoDB = async (file: any, payload: any) => {
 
-    if (!payload) {
+    if (!payload?.title || !payload?.texts) {
         throw new CustomAppError(httpStatus.NOT_FOUND, "blog all data must be added");
     }
 
@@ -16,13 +16,15 @@ const createBlogIntoDB = async (file: any, payload: any) => {
 
 
     const BlogData = {
-        ...payload,
+        ...payload
     };
 
 
     if (file) {
         BlogData.thumbnail = file?.path;
-    };
+    }
+
+
 
 
     const res = await BlogModel.create(BlogData);
