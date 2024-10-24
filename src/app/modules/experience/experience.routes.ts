@@ -7,7 +7,7 @@ import { ExperienceController } from "./experience.controller";
 const router = express.Router();
 
 router.post(
-    "/add-education",
+    "/add-experience",
     requestValidator(ExperienceValidation.ExperienceValidationSchema),
     ExperienceController.createExperience,
 );

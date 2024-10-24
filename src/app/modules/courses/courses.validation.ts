@@ -6,7 +6,7 @@ const CourseValidationSchema = z.object({
     institution: z.string(),
     completionDate: z.string(),
     certificateLink: z.string(),
-    skillsLearned: z.array(z.string()),
+    skillsLearned: z.array(z.object({})),
 });
 
 
@@ -15,7 +15,7 @@ const CourseUpdateValidationSchema = z.object({
     institution: z.string().optional(),
     completionDate: z.string().optional(),
     certificateLink: z.string().optional(),
-    skillsLearned: z.array(z.string()).optional(),
+    skillsLearned: z.array(z.object({})).optional(),
 });
 
 

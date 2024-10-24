@@ -7,9 +7,9 @@ const ExperienceValidationSchema = z.object({
     startDate: z.string(),
     endDate: z.string(),
     location: z.string(),
-    responsibilities: z.array(z.string()),
-    technologiesUsed: z.array(z.string()),
-    achievements: z.array(z.string()).optional(),
+    responsibilities: z.string(),
+    technologiesUsed: z.array(z.object({})),
+    achievements: z.string().optional(),
     employmentType: z.enum([
         "Full-time",
         "Part-time",
@@ -17,8 +17,8 @@ const ExperienceValidationSchema = z.object({
         "Freelance",
         "Internship"
     ]),
-    companyWebsite: z.string().url().optional(),
-    logo: z.string().url().optional(),
+    companyWebsite: z.string().optional(),
+    logo: z.string().optional(),
 });
 
 
@@ -29,9 +29,9 @@ const ExperienceUpdateValidationSchema = z.object({
     startDate: z.string().optional(),
     endDate: z.string().optional(),
     location: z.string().optional(),
-    responsibilities: z.array(z.string()).optional(),
-    technologiesUsed: z.array(z.string().optional()).optional(),
-    achievements: z.array(z.string()).optional(),
+    responsibilities: z.string().optional(),
+    technologiesUsed: z.array(z.object({}).optional()).optional(),
+    achievements: z.string().optional(),
     employmentType: z.enum([
         "Full-time",
         "Part-time",
@@ -39,8 +39,8 @@ const ExperienceUpdateValidationSchema = z.object({
         "Freelance",
         "Internship"
     ]).optional(),
-    companyWebsite: z.string().url().optional(),
-    logo: z.string().url().optional(),
+    companyWebsite: z.string().optional(),
+    logo: z.string().optional(),
 });
 
 

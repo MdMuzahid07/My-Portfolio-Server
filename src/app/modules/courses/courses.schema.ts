@@ -17,7 +17,7 @@ const CourseSchema = new mongoose.Schema({
         type: String,
     },
     skillsLearned: {
-        type: [String],
+        type: [Object],
         required: true,
     }
 });

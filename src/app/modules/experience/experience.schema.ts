@@ -22,7 +22,7 @@ const ExperienceSchema = new mongoose.Schema({
         required: true,
     },
     responsibilities: {
-        type: [String],
+        type: String,
         required: true,
     },
     technologiesUsed: {
@@ -30,7 +30,7 @@ const ExperienceSchema = new mongoose.Schema({
         required: true,
     },
     achievements: {
-        type: [String],
+        type: String,
     },
     employmentType: {
         type: String,
@@ -42,6 +42,7 @@ const ExperienceSchema = new mongoose.Schema({
     },
     logo: {
         type: String,
+        default: ""
     }
 });
 

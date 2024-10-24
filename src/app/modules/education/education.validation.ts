@@ -13,7 +13,7 @@ const EducationValidationSchema = z.object({
     // Optional field
     description: z.string().optional(),
     // Optional array of strings
-    achievements: z.array(z.string()).optional(),
+    achievements: z.array(z.object({})).optional(),
 });
 
 
@@ -29,7 +29,7 @@ const EducationUpdateValidationSchema = z.object({
     // Optional field
     description: z.string().optional(),
     // Optional array of strings
-    achievements: z.array(z.string()).optional(),
+    achievements: z.array(z.object({})).optional(),
 });
 
 export const EducationValidation = {
