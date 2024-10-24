@@ -10,6 +10,7 @@ const socialSchema = new mongoose.Schema<ISocial>({
     },
     icon: {
         type: String,
+        default: ""
     },
     url: {
         type: String,

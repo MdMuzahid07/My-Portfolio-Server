@@ -2,7 +2,7 @@ import { z } from "zod";
 
 const skillValidationSchema = z.object({
     name: z.string(),
-    icon: z.string(),
+    icon: z.string().optional(),
     url: z.string()
 });
 

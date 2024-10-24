@@ -10,6 +10,7 @@ const skillSchema = new mongoose.Schema<ISkill>({
     },
     icon: {
         type: String,
+        default: ""
     },
     url: {
         type: String,

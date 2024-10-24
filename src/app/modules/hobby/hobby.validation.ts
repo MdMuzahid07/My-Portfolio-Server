@@ -2,7 +2,7 @@ import { z } from "zod";
 
 const hobbyValidationSchema = z.object({
     name: z.string(),
-    icon: z.string(),
+    icon: z.string().optional(),
 });
 
 

@@ -46,6 +46,7 @@ const updateProfileById = async (req: Request, res: Response, next: NextFunction
         const { id } = req.params;
         const file = req.file;
 
+
         const result = await ProfileService.updateProfileFromDB(file, id, payload);
 
         sendResponse(res, {

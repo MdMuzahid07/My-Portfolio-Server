@@ -36,6 +36,7 @@ router.delete(
 
 router.patch(
     "/:id",
+    multerUpload.single("thumbnail"),
     requestValidator(BlogValidation.BlogUpdateValidationSchema),
     BlogController.updateBlogById,
 );

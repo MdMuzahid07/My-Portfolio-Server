@@ -50,6 +50,12 @@ const updateProfileFromDB = async (file: any, id: string, payload: any) => {
 
     const isProfileExists = await ProfileModel.findById(id);
 
+    console.log({
+        id,
+        file,
+        payload
+    })
+
     if (!isProfileExists) {
         throw new CustomAppError(httpStatus.NOT_FOUND, "profile not found!");
     };

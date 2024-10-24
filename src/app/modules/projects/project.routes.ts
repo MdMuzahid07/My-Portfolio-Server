@@ -35,6 +35,11 @@ router.delete(
 
 router.patch(
     "/:id",
+    multerUpload.single("image"),
+    (req: Request, res: Response, next: NextFunction) => {
+        req.body = JSON.parse(req.body.data);
+        next();
+    },
     requestValidator(ProjectValidation.projectUpdateValidationSchema),
     ProjectController.updateProjectById,
 );

@@ -13,6 +13,7 @@ const createBlog = async (req: Request, res: Response, next: NextFunction) => {
             title: title
         };
 
+
         const result = await BlogService.createBlogIntoDB(file, payload);
 
         sendResponse(res, {

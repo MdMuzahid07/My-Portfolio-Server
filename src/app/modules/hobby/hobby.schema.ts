@@ -10,6 +10,7 @@ const HobbySchema = new mongoose.Schema<IHobby>({
     },
     icon: {
         type: String,
+        default: ""
     }
 },
     {

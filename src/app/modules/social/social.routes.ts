@@ -35,6 +35,10 @@ router.delete(
 
 router.patch(
     "/:id",
+    (req: Request, res: Response, next: NextFunction) => {
+        req.body = JSON.parse(req.body.data);
+        next();
+    },
     requestValidator(SocialValidation.socialUpdateValidationSchema),
     SocialPlatformController.updateSocialById,
 );

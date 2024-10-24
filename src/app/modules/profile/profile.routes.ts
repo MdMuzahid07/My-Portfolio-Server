@@ -31,6 +31,13 @@ router.delete(
 
 router.patch(
     "/:id",
+    multerUpload.single("image"),
+    (req: Request, res: Response, next: NextFunction) => {
+        if (req?.body?.data) {
+            req.body = JSON.parse(req.body.data);
+        }
+        next();
+    },
     requestValidator(ProfileValidation.profileValidationSchema),
     ProfileController.updateProfileById,
 );
