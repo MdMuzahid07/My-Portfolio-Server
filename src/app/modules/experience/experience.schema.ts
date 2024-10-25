@@ -1,5 +1,11 @@
 import mongoose from "mongoose";
 
+const TechnologySchema = new mongoose.Schema({
+    _id: { type: String, required: false },
+    icon: { type: String, required: true },
+    name: { type: String, required: true }
+});
+
 const ExperienceSchema = new mongoose.Schema({
     company: {
         type: String,
@@ -26,7 +32,7 @@ const ExperienceSchema = new mongoose.Schema({
         required: true,
     },
     technologiesUsed: {
-        type: [String],
+        type: [TechnologySchema],
         required: true,
     },
     achievements: {
@@ -45,6 +51,5 @@ const ExperienceSchema = new mongoose.Schema({
         default: ""
     }
 });
-
 
 export default ExperienceSchema;

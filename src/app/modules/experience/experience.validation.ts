@@ -1,6 +1,5 @@
 import { z } from "zod";
 
-
 const ExperienceValidationSchema = z.object({
     company: z.string(),
     position: z.string(),
@@ -8,7 +7,13 @@ const ExperienceValidationSchema = z.object({
     endDate: z.string(),
     location: z.string(),
     responsibilities: z.string(),
-    technologiesUsed: z.array(z.object({})),
+    technologiesUsed: z.array(
+        z.object({
+            _id: z.string().optional(),
+            icon: z.string(),
+            name: z.string()
+        })
+    ),
     achievements: z.string().optional(),
     employmentType: z.enum([
         "Full-time",
@@ -21,8 +26,6 @@ const ExperienceValidationSchema = z.object({
     logo: z.string().optional(),
 });
 
-
-
 const ExperienceUpdateValidationSchema = z.object({
     company: z.string().optional(),
     position: z.string().optional(),
@@ -30,7 +33,13 @@ const ExperienceUpdateValidationSchema = z.object({
     endDate: z.string().optional(),
     location: z.string().optional(),
     responsibilities: z.string().optional(),
-    technologiesUsed: z.array(z.object({}).optional()).optional(),
+    technologiesUsed: z.array(
+        z.object({
+            _id: z.string().optional(),
+            icon: z.string(),
+            name: z.string()
+        })
+    ).optional(),
     achievements: z.string().optional(),
     employmentType: z.enum([
         "Full-time",
@@ -42,9 +51,6 @@ const ExperienceUpdateValidationSchema = z.object({
     companyWebsite: z.string().optional(),
     logo: z.string().optional(),
 });
-
-
-
 
 export const ExperienceValidation = {
     ExperienceValidationSchema,
